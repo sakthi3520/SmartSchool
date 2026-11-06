@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f7fb;
+  --foreground: #172033;
+  --primary: #4f46e5;
+  --primary-light: #eef2ff;
+  --secondary: #64748b;
+  --border: #e5eaf2;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #312e81;
+}
+
+/* ============================================================
+   Teacher Dashboard additions
+   ============================================================ */
+
+/* Sidebar: deep navy to indigo gradient */
+.sidebar-bg {
+  background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 55%, #172554 100%);
+  box-shadow: 8px 0 30px rgba(15, 23, 42, 0.18);
+}
+
+/* Smooth fade + slide when a page is switched */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in-up 0.35s ease-out both;
+}
+
+/* Slim scrollbar for the sidebar menu (visible only if the menu is long) */
+.sidebar-bg nav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-bg nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in {
+    animation: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

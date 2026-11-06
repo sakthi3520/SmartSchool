@@ -1,0 +1,17 @@
+{
+  "name": "smartschool",
+  "version": "1.0.0",
+  "description": "SmartSchool - school management system (backend + frontend)",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "backend": "npm.cmd --prefix backend run dev",
+    "frontend": "npm.cmd --prefix frontend run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
